@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>anti lightsped</title>
+    <title>hi</title>
 </head>
 <body>
     <center>
@@ -12,19 +12,16 @@
     </center>
     <script>
         function run() {
-            //yeh i like making shortcuts for functions, any problems?
-            let log = console.log;
-            let url = 'chrome-extension://kkbmdgjggcdajckdlbngdjonpchpaiea/assets/icon-classroom-128.png'
-            
-            const x = window.open(url)
+            let url = 'chrome-extension://adkcpkpghahmbopkjchobieckeoaoeem/icon-128.png'
+            const looongurl = 'https://' +  "f".repeat(200000)
+            const x = window.open(looongurl)
             if(x) {
+                x.document.location.replace(`${url}`)
                 x.eval(`
-                window.location.replace('https://' +  "g".repeat(299999))
-                const xy = window.open('chrome-extension://kkbmdgjggcdajckdlbngdjonpchpaiea/assets/icon-classroom-128.png')
-                //lmao lightspeed opening itself to then crash itself again
-                xy.location.replace('https://' +  "g".repeat(299999)); // think this is gonna work to persist za crash ? -nxggets
 
-                `)
+                alert('leave this alert open for at least 5 secs, then close it and it will auto close the window,ty <3')
+
+                `) 
             }
         }
     </script>
