@@ -1,6 +1,6 @@
 
 # **F**unny **C**hromebook **E**xploit **U**sing **W**indow() **E**valuate
-
+**THIS IS ONLY FOR LIGHTSPEED FILTER AGENT ONLY!**
 This project is inspired by [@Blobby Boi](https://github.com/Blobby-Boi), and no i did not skid anything i rewrote it to be more lightweight while doing the same impact or even more.
 
 
